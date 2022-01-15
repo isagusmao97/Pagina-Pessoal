@@ -8,8 +8,6 @@
   }
 
   body,html{
-    width: 100%;
-    height: 100%;
     font-family: 'Poppins';
   }
 
@@ -17,11 +15,17 @@
     background-size:100%;
     background-image: url('imagens/nuvem.svg');
     background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    max-height: 800px;
+    object-fit: cover;
+    object-position: center;
   }
 
   main{
     display:grid;
-    place-items: center;
+    place-items: center; 
   }
 
   .container{
@@ -31,14 +35,26 @@
     margin-right: auto;
     text-align: center;
     position: relative;
+    animation: has-shown 2s forwards;
   }
 
+  @keyframes has-shown{
+    from{
+      opacity:0;
+      transform:translateY(40px);
+    }
+    to{
+      opacity:1;
+      transform:none;
+    }
+  }
+  
   .container-primeira-imagem{
-    position: absolute;
+    position:absolute;
     width: 800px;
     height: 664px;
-    left: 410px;
-    top: 208px;
+    left: 450px;
+    top: 190px; 
   }
 
   .avatar{
@@ -50,23 +66,17 @@
     position: absolute;
     width: 171px;
     height: 193px;
-    left: 874px;
+    left: 940px;
     top: 264px;
     transform: translatey(0px);
-    animation: float 5s ease-in-out infinite; 
+    animation: float 2s ease-in-out alternate infinite; 
   }
 
   @keyframes float{
-    0%{
-        transform: translatey(0px);
+    to{
+        transform: translatey(20px);
     }
-    50%{
-        transform: translatey(-30px);
-    }
-    100%{
-        transform: translatey(0px);
-    }
-}
+  }
 
   .conteudo{
     display: flex;
@@ -76,7 +86,7 @@
     position: absolute;
     width: 492px;
     height: 111px;
-    left: 714px;
+    left: 780px;
     top: 533px;
   }
 
@@ -110,44 +120,44 @@
     padding: 0;
     display: flex;
     gap: 0.5rem;
-    justify-content: center;
-    
+    justify-content:center;
   }
   .github{
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 723px;
-    top: 720px;
+    left: 789px;
+    top: 700px; 
   }
   .behance{
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 821.67px;
-    top: 720px;
+    left: 884.67px;
+    top: 700px;
   }
   .instagram{
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 920.33px;
-    top: 720px;
+    left: 979.33px;
+    top: 700px;
   }
   .twitter{
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 1019px;
-    top: 720px;
+    left: 1076px;
+    top: 700px;
   }
   .linkedin{
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 1117.67px;
-    top: 720px;
+    left: 1170.67px;
+    top: 700px;
   }
+  
 
 
 
