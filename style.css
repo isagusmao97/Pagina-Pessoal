@@ -15,9 +15,8 @@
     background-size:100%;
     background-image: url('imagens/nuvem.svg');
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    max-width: 1500px;
+    height: 100vh;
+    width: 100vw;
     max-height: 800px;
     object-fit: cover;
     object-position: center;
@@ -29,13 +28,19 @@
   }
 
   .container{
-    display:grid;
-    place-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    position: relative;
-    animation: has-shown 2s forwards;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 174, 165, 0.8);
+    box-shadow: 0px 10px 35px rgba(65, 64, 64, 0.25);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 1099px;
+    height: 690px;
+    margin: 140px auto;
+    animation: has-shown 2s;
   }
 
   @keyframes has-shown{
@@ -48,14 +53,6 @@
       transform:none;
     }
   }
-  
-  .container-primeira-imagem{
-    position:absolute;
-    width: 800px;
-    height: 664px;
-    left: 450px;
-    top: 190px; 
-  }
 
   .avatar{
     display:flex;
@@ -63,18 +60,15 @@
   }
 
   .avatar>img{
-    position: absolute;
     width: 171px;
     height: 193px;
-    left: 940px;
-    top: 264px;
     transform: translatey(0px);
     animation: float 2s ease-in-out alternate infinite; 
   }
 
   @keyframes float{
     to{
-        transform: translatey(20px);
+        transform: translatey(30px);
     }
   }
 
@@ -83,11 +77,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    position: absolute;
     width: 492px;
     height: 111px;
-    left: 780px;
-    top: 533px;
+    margin: 20px 0 70px 0;
   }
 
   .conteudo-escrito-titulo{
@@ -115,48 +107,65 @@
   }
 
   ul {
-    margin-top:auto;
     list-style: none;
     padding: 0;
     display: flex;
     gap: 0.5rem;
-    justify-content:center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  .github{
-    position: absolute;
+
+  .size{
     width: 80px;
     height: 80px;
-    left: 789px;
-    top: 700px; 
   }
-  .behance{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 884.67px;
-    top: 700px;
+
+  @media only screen and (max-device-width: 900px){
+    .container {width:600px};
+    .avatar>img{
+      display:flex;
+      align-items: center;
+      width: 150px;
+      height: 170px;
+    }
+    .conteudo-escrito-titulo{
+      font-size: 32px;
+    }
+    .conteudo-escrito-subtitulo{
+      font-size: 28px;
+    }
+    body{
+      background-image: url('imagens/nuvem tablet.svg');
+      background-size: auto;
+      height: 100vh;
+    }
   }
-  .instagram{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 979.33px;
-    top: 700px;
+
+  @media only screen and (max-device-width: 700px){
+    .container {width:400px};
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+    body{
+      width: 375px;
+      height: 812px;
+    }
+    .avatar>img{
+      display:flex;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+    }
+    .conteudo-escrito-titulo{
+      font-size:30px;
+    }
+    .conteudo-escrito-subtitulo{
+      font-size: 28px;
+    }
   }
-  .twitter{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 1076px;
-    top: 700px;
-  }
-  .linkedin{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 1170.67px;
-    top: 700px;
-  }
+
+
   
 
 
