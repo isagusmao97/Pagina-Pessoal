@@ -143,14 +143,6 @@
 
   @media only screen and (max-device-width: 700px){
     .container {width:400px};
-    .container{
-      display: flex;
-      flex-direction: column;
-    }
-    body{
-      width: 375px;
-      height: 812px;
-    }
     .avatar>img{
       display:flex;
       align-items: center;
